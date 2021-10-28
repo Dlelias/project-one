@@ -7,15 +7,15 @@ Provide a short description explaining the what, why, and how of your project. U
 
 
 ## Usage
-Landing Page: 
-    ```md
-    ![Landing Page](./assets/images/Prototype_2.png)
-    ```
+Viewing The Landing Page:
+    ![alt text](./assets/images/Prototype_2.png)
 
+## Usage
 Viewing Search Results:
-    ```md
-    ![Housing Results View](./assets/images/Prototype_1.png)
-    ```
+![alt text](./assets\images\Prototype_1.png)
+
+
+
 
 
 ## Credits
