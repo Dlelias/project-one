@@ -6,15 +6,13 @@ Provide a short description explaining the what, why, and how of your project. U
 - On roomFinder users can explore housing options nationwide, connect with those who inhabit the space and select from an array of local experiences to make new friends. 
 
 
-## Usage
-Viewing The Landing Page:
-    ![alt text](./assets/images/Prototype_2.png)
 
-## Usage
-Viewing Search Results:
-![alt text](./assets\images\Prototype_1.png)
+## Prototypes
+
+![alt text](./assets/images/Prototype_1.png)
 
 
+![alt text](./assets/images/Prototype_2.png)
 
 
 
