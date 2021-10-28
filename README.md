@@ -12,7 +12,7 @@ Provide a short description explaining the what, why, and how of your project. U
 ![alt text](./assets/images/Prototype_1.png)
 
 
-![alt text](./assets/images/Prototype_2.png)
+![alt text](./assets/images/Prototype_2.PNG)
 
 
 
