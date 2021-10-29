@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    background-color: white;
+}
+
+.navBar{
+   list-style-type: none;
+   margin: 0;
+   padding:0;
+   overflow: hidden;
+    background-color: brown;
+    text-align: center;
+    
+}
+
+.main-container{
+    text-align: center;
+   margin:0;
+   width: 100vw;
+   height: 60vh;
+    align-content: center;
+    background-color: cadetblue;
+    background-image:url(/assets/images/rommies\ .jpeg);
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+.searchBtn {
+    position:relative;
+    top:75%;
+
+}
