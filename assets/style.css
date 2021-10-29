@@ -1,5 +1,7 @@
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -7,29 +9,64 @@ body {
 }
 
 .navBar{
-   list-style-type: none;
    margin: 0;
    padding:0;
    overflow: hidden;
-    background-color: brown;
-    text-align: center;
-    
+   background: linear-gradient(to left, #0c0c0e, #525255);
+   text-align: center;
+   font-family: 'Roboto', sans-serif;
+   font-size: 200%;
 }
 
-.main-container{
-    text-align: center;
-   margin:0;
-   width: 100vw;
-   height: 60vh;
-    align-content: center;
-    background-color: cadetblue;
-    background-image:url(/assets/images/rommies\ .jpeg);
-    background-repeat:no-repeat;
-    background-position:center;
+.navBar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2% 1% 2%;
 }
 
-.searchBtn {
-    position:relative;
-    top:75%;
+.navBar ul li {
+    color: white;
+    list-style-type: none;
 
+}
+
+.main-content{
+text-align: center;
+margin:0;
+min-width: 100vw;
+min-height: 500px;
+align-content: center;
+background-image:url(/assets/images/rommies\ .jpeg);
+background-repeat:no-repeat;
+background-position:center;
+background-size: cover;
+image-rendering: crisp-edges;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+
+.welcome-title {
+    margin-top: 2%;
+    font-size: 400%;
+    color: rgb(104, 104, 1);
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.roomfinder-data {
+    display: flex;
+    justify-content: space-around;
+}
+
+.roomfinder-data form div {
+    display: flex;
+    flex-direction: column;
 }
