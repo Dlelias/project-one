@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 body {
@@ -14,7 +16,6 @@ body {
    overflow: hidden;
    background: linear-gradient(to left, #0c0c0e, #525255);
    text-align: center;
-   font-family: 'Roboto', sans-serif;
    font-size: 200%;
 }
 
@@ -32,16 +33,16 @@ body {
 }
 
 .main-content{
-text-align: center;
-margin:0;
-min-width: 100vw;
-min-height: 500px;
-align-content: center;
-background-image:url(/assets/images/rommies\ .jpeg);
-background-repeat:no-repeat;
-background-position:center;
-background-size: cover;
-image-rendering: crisp-edges;
+    text-align: center;
+    margin:0;
+    min-width: 100vw;
+    min-height: 650px;
+    align-content: center;
+    background-image:url(/assets/images/rommies\ .jpeg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: cover;
+    image-rendering: crisp-edges;
 }
 
 @keyframes slideInFromLeft {
@@ -57,16 +58,14 @@ image-rendering: crisp-edges;
 .welcome-title {
     margin-top: 2%;
     font-size: 400%;
-    color: rgb(255, 255, 21);
+    color: rgb(247, 247, 29);
     animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .roomfinder-data {
-    display: flex;
-    justify-content: space-around;
+    min-width: 600px;
 }
 
 .roomfinder-data form div {
-    display: flex;
-    flex-direction: column;
+    padding: 3%;
 }
