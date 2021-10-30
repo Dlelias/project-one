@@ -3,14 +3,13 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-
 }
 
 body {
     background-color: white;
 }
 
-.navBar{
+.navBar, footer{
    margin: 0;
    padding:0;
    overflow: hidden;
@@ -57,9 +56,12 @@ body {
 
 .welcome-title {
     margin-top: 2%;
-    font-size: 400%;
+    font-size: 80%;
     color: rgb(247, 247, 29);
     animation: 1s ease-out 0s 1 slideInFromLeft;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .roomfinder-data {
@@ -68,4 +70,40 @@ body {
 
 .roomfinder-data form div {
     padding: 3%;
+}
+
+.form-check {
+    margin-left: 5%;
+}
+
+#validationFormCheck2, #validationFormCheck3 {
+    cursor: pointer;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+/* default selection for Rent button */
+.button-active {
+    background-color: red;
+}
+
+#validationFormCheck2:active, #validationFormCheck2:focus {
+    background-color: rgb(27, 177, 27);
+}
+
+#validationFormCheck3:active, #validationFormCheck3:focus {
+    background-color: rgb(27, 177, 27);
+}
+
+.form-check-input {
+    list-style-type: none;
+}
+
+footer ul li {
+    font-size: 60%;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
 }
