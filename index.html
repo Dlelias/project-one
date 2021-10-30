@@ -28,17 +28,45 @@
         </li>
       </ul>
     </nav>
-    <div class="col-12 hhmain-content">
-      <div class="row">
-        <h4 class="text-center welcome-title">Find places at an affordable rent!</h4>
-      </div>
-      <div class="row d-flex justify-content-around roomfinder-data">
-        <form class="d-flex-column col-3 bg-light rounded p-3 my-2 needs-validation" novalidate>
-          <div>
-            <label for="validationCustom01" class="form-label">State</label>
-            <input class="form-control" type="text" id="validationCustom01" required />
-            <div class="valid-feedback">Looks good!</div>
-          </div>
+    <div class="col-12 main-content">
+        <div class="row">
+        </div> 
+        <div class="row d-flex justify-content-around roomfinder-data">
+            <form class="d-flex-column col-3 bg-light rounded p-3 my-2 needs-validation" novalidate>
+
+                <div>
+                  <label for="validationCustom01" class="form-label">State</label>
+                  <input class="form-control" type="text" id="validationCustom01" required>
+                </div>
+
+                <div>
+                    <label for="validationCustom02" class="form-label">City</label>
+                    <input class="form-control" type="text" id="validationCustom02" required>
+                </div>
+
+  
+                <div>
+                    <label for="validationCustom03" class="form-label">Budget</label>
+                    <input class="form-control" type="number" id="validationCustom03" required>
+                    <div class="valid-feedback">
+                    </div>
+                </div>
+
+                <div class="buttons-container">
+                    <label>Rent or Buy?</label>
+                    <div class="d-flex mx-6 p-3">
+                        <div class="d-flex column form-check">
+                            <button type="button" class="p-1 form-check-button button-active" id="validationFormCheck2 rent-button" value="rent" name="button-stacked" onclick={checkSelection(event)} required>
+                            <label class="form-check-label" for="validationFormCheck2">Rent</label>
+                        </div>
+                        <div class="d-flex column form-check">
+                            <button type="button" class="p-1 form-check-button" id="validationFormCheck3 buy-button" value="buy" name="button-stacked" onclick={checkSelection(event)} required>
+                            <label class="form-check-label" for="validationFormCheck3">Buy</label>
+                        </div>
+    
+                    </div>
+                </div>
+
 
           <div>
             <label for="validationCustom02" class="form-label">City</label>
