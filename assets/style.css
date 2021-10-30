@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1% 2% 1% 2%;
+    padding: 1% 2% 1% 2%;  
 }
 
 .navBar ul li {
@@ -37,9 +37,9 @@ body {
 text-align: center;
 margin:0;
 min-width: 100vw;
-min-height: 500px;
+min-height: 400px;
 align-content: center;
-background-image:url(/assets/images/rommies\ .jpeg);
+background-image:url(/assets/images/roomatefinders.jpeg);
 background-repeat:no-repeat;
 background-position:center;
 background-size: cover;
@@ -57,9 +57,9 @@ image-rendering: crisp-edges;
   
 
 .welcome-title {
-    margin-top: 2%;
-    font-size: 400%;
-    color: rgb(104, 104, 1);
+    margin-top: 1%;
+    font-size: 75%;
+    color:whitesmoke;
     animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
