@@ -98,9 +98,14 @@ body {
 .form-check-input {
     list-style-type: none;
 }
-
+ footer {
+     margin: 0 auto;
+     text-align: center;
+ }
 footer ul li {
     font-size: 60%;
+    list-style-type: none;
+    margin: 2% auto;
 }
 
 footer ul li a {
