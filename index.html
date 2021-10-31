@@ -29,8 +29,8 @@
         </li>
       </ul>
     </nav>
-    <div class="col-12 main-content">
-        <div class="row d-flex justify-content-around roomfinder-data">
+    <div class="min-vw-100 col-12 main-content">
+        <div class="row min-vw-100 d-flex justify-content-around roomfinder-data">
             <form class="d-flex-column col-3 bg-light rounded p-3 my-2 needs-validation" novalidate>
 
                 <div class="col-md-12">
@@ -61,11 +61,11 @@
                     <label>Rent or Buy?</label>
                     <div class="d-flex mx-6 p-3">
                         <div class="col-6 d-flex column form-check">
-                            <button type="button" class="p-1 form-check-button button-active" id="validationFormCheck2 rent-button" value="rent" name="button-stacked" onclick={checkSelection(event)} required>
-                            <label class="form-check-label" for="validationFormCheck2">Rent</label>
+                            <button type="button" class="px-3 py-1 form-check-button" id="validationFormCheck2 rent-button" value="rent" name="button-stacked" onclick={checkSelection(event)} required>
+                            <label class="form-check-button" for="validationFormCheck2">Rent</label>
                         </div>
                         <div class="col-6 d-flex column form-check">
-                            <button type="button" class="p-1 form-check-button" id="validationFormCheck3 buy-button" value="buy" name="button-stacked" onclick={checkSelection(event)} required>
+                            <button type="button" class="px-3 py-1 form-check-button" id="validationFormCheck3 buy-button" value="buy" name="button-stacked" onclick={checkSelection(event)} required>
                             <label class="form-check-label" for="validationFormCheck3">Buy</label>
                         </div>
     
@@ -76,25 +76,30 @@
             </form>
 
             <form class="col-3 bg-light rounded p-3 my-2 needs-validation" novalidate>
-                <div>
-                    <label for="exampleInputPassword1">Food</label>
-                    <input class="p-1 my-2" type="text" id="food" placeholder="Food" />
+                <div class="col-md-12">
+                    <label for="validationCustom04" class="form-label">Food</label>
+                    <input class="form-control" type="text" id="validationCustom04" required>
+                    <div class="valid-feedback">
+                    </div>
                 </div>
-                <div>
-                    <label for="exampleInputPassword1">Coffee</label>
-                    <input class="p-1 my-2" type="text" id="food" placeholder="Coffee" />
+                <div class="col-md-12">
+                    <label for="validationCustom05" class="form-label">Coffee</label>
+                    <input class="form-control" type="text" id="validationCustom05" required>
+                    <div class="valid-feedback">
+                    </div>
                 </div>
+
                 <button class="btn btn-primary my-3 optional-data">Submit</button>
             </form>
         </div>
     </div>
     <footer class="min-vw-100 text-center">
-      <ul class="d-flex justify-content-around text-center">
+      <ul class="d-flex mx-2 justify-content-around text-center">
           <li><a href="/">Terms and Conditions</a></li>
           <li><a href="/">About</a></li>
           <li><a href="/">Contact Us</a></li>
         <ul></ul>
     </footer>
   </body>
-  <link src="./assets/script.js" />
+  <script src="./assets/script.js"/></script>
 </html>

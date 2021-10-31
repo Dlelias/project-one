@@ -3,7 +3,6 @@ var rentSelection = document.querySelector("#rent-button");
 
 submitData.addEventListener("click", function(event) {
     event.preventDefault();
-    event.stopPropagation();
     console.log("SUCCESS!");
 })
 
