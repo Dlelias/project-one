@@ -82,28 +82,24 @@ body {
     min-width: 100px;
 }
 
-/* default selection for Rent button */
-.button-active {
-    background-color: red;
-}
-
-#validationFormCheck2:active, #validationFormCheck2:focus {
-    background-color: rgb(27, 177, 27);
-}
-
-#validationFormCheck3:active, #validationFormCheck3:focus {
-    background-color: rgb(27, 177, 27);
-}
 
 .form-check-input {
     list-style-type: none;
+}
+
+.form-check-button {
+    border-radius: 5px;
+}
+
+.form-check-button:focus, .form-check-button:active {
+    background-color: rgb(37, 104, 37);
 }
  footer {
      margin: 0 auto;
      text-align: center;
  }
 footer ul li {
-    font-size: 60%;
+    font-size: 50%;
     list-style-type: none;
     margin: 2% auto;
 }
