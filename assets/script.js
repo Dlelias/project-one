@@ -64,7 +64,8 @@ function storeRoomData(state,city,budget,rentOrBuy) {
 
 var allRoomData = JSON.parse(localStorage.getItem("cityStorage")) || [];
 
-
+// function that uses APIs to grab lat/long and city info
+// NOTE: need help with this
 function getRoomData(state) {
 
 }
