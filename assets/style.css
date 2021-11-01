@@ -28,7 +28,7 @@ body {
 .navBar ul li {
     color: white;
     list-style-type: none;
-
+    font-size: 90%;
 }
 
 .main-content{

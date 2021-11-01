@@ -66,7 +66,23 @@ var allRoomData = JSON.parse(localStorage.getItem("cityStorage")) || [];
 
 // function that uses APIs to grab lat/long and city info
 // NOTE: need help with this
-function getRoomData(state) {
+function getRoomData(state,city,budget,rentOrBuy) {
+    var roomAPIURL = 'https://www.roomster.com/api/search?search_params.budget.min=0&search_params.budget.max=' + (budget) + '&search_params.searchLocation=' + (city);
+    console.log(roomAPIURL);
+    fetch(roomAPIURL)
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+        // .then(function (response) {
+        //     if (response.ok) {
+        //         response.json().then(function (data) {
+
+        //             console.log(data);
+        //         })
+        //     }
+        //     })
+
+
 
 }
 
