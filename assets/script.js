@@ -1,27 +1,75 @@
-var submitData = document.querySelector(".submit-data");
-var rentSelection = document.querySelector("#rent-button");
+// button to submit form containing state, city and budget data
+var submitDataButton = document.querySelector(".needs-validation");
 
-submitData.addEventListener("click", function(event) {
+// selection for state, city and bugdet
+var state = document.querySelector("#validationCustom01");
+var city = document.querySelector("#validationCustom02");
+var budget = document.querySelector("#validationCustom03");
+
+// select if user selected either rent or buy option
+var rentOrBuyOption = document.querySelector(".form-check-button");
+
+// button to submit optional data
+var submitOptionalDataButton = document.querySelector(".submit-optional-data");
+
+
+// function that submits data
+function submitData(event) {
     event.preventDefault();
-    console.log("SUCCESS!");
-})
-
-// function to verify is user selected rent or buy
-function checkSelection(event) {
-    var element = event.target;
-
-    if (element.matches("form-check-button")) {
-        rentSelection.setAttribute("class", "button-active");
+    // functions that grab data from api and 
+    if (state) {
+        stateValue = state.value.trim();
     }
-    else {
-        rentSelection.setAttribute("class", "p-1 form-check-button");
 
+    if (city) {
+        cityValue = city.value.trim();
     }
+
+    if (budget) {
+        budgetValue = budget.value;
+    }
+
+    if (rentOrBuyOption) {
+        rentOrBuyOptionValue = rentOrBuyOption.value;
+    }
+
+    // function grabs room data based off inputted state, city, budget, and rentOrBuyoption data
+    getRoomData(stateValue, cityValue, budgetValue, rentOrBuyOptionValue);
+
+    // store data into the database
+    storeRoomData(stateValue, cityValue, budgetValue, rentOrBuyOptionValue);
+    
+    state.value = '';
+    city.value = '';
+    budget.value = '';
+    rentOrBuyOption.value = '';
+    
 }
 
 
+// variable to store every room data info into database
 
-// used to validate that user has inputted informatino
+function storeRoomData(state,city,budget,rentOrBuy) {
+    var roomData = {
+        stateInfo: state,
+        cityInfo: city,
+        budgetInfo: budget,
+        rentOrBuyOption: rentOrBuy
+    };
+
+    allRoomData.push(roomData);
+    localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
+
+}
+
+var allRoomData = JSON.parse(localStorage.getItem("cityStorage")) || [];
+
+
+function getRoomData(state) {
+
+}
+
+// used to validate that user has inputted information or else form will not be submitted
 function formValidation() {
     'use strict'
   
@@ -45,4 +93,4 @@ function formValidation() {
 formValidation();
   
   
-  
+submitDataButton.addEventListener("submit", submitData);
