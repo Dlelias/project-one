@@ -28,7 +28,7 @@ body {
 .navBar ul li {
     color: white;
     list-style-type: none;
-
+    font-size: 90%;
 }
 
 .main-content{
@@ -37,7 +37,7 @@ body {
     min-width: 100vw;
     min-height: 650px;
     align-content: center;
-    background-image:url(/assets/images/rommies\ .jpeg);
+    background-image:url(./images/rommies\ .jpeg);
     background-repeat:no-repeat;
     background-position:center;
     background-size: cover;
