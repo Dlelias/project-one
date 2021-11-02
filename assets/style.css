@@ -3,14 +3,13 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-
 }
 
 body {
     background-color: white;
 }
 
-.navBar{
+.navBar, footer{
    margin: 0;
    padding:0;
    overflow: hidden;
@@ -29,7 +28,7 @@ body {
 .navBar ul li {
     color: white;
     list-style-type: none;
-
+    font-size: 90%;
 }
 
 .main-content{
@@ -38,7 +37,7 @@ body {
     min-width: 100vw;
     min-height: 650px;
     align-content: center;
-    background-image:url(/assets/images/rommies\ .jpeg);
+    background-image:url(./images/rommies\ .jpeg);
     background-repeat:no-repeat;
     background-position:center;
     background-size: cover;
@@ -57,9 +56,12 @@ body {
 
 .welcome-title {
     margin-top: 2%;
-    font-size: 400%;
+    font-size: 80%;
     color: rgb(247, 247, 29);
     animation: 1s ease-out 0s 1 slideInFromLeft;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .roomfinder-data {
@@ -68,4 +70,41 @@ body {
 
 .roomfinder-data form div {
     padding: 3%;
+}
+
+.form-check {
+    margin-left: 5%;
+}
+
+#validationFormCheck2, #validationFormCheck3 {
+    cursor: pointer;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+
+.form-check-input {
+    list-style-type: none;
+}
+
+.form-check-button {
+    border-radius: 5px;
+}
+
+.form-check-button:focus, .form-check-button:active {
+    background-color: rgb(37, 104, 37);
+}
+ footer {
+     margin: 0 auto;
+     text-align: center;
+ }
+footer ul li {
+    font-size: 50%;
+    list-style-type: none;
+    margin: 2% auto;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: white;
 }

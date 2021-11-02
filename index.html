@@ -10,6 +10,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    
     <link href="./assets/style.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,74 +29,77 @@
         </li>
       </ul>
     </nav>
-    <div class="col-12 hhmain-content">
-      <div class="row">
-        <h4 class="text-center welcome-title">Find places at an affordable rent!</h4>
-      </div>
-      <div class="row d-flex justify-content-around roomfinder-data">
-        <form class="d-flex-column col-3 bg-light rounded p-3 my-2 needs-validation" novalidate>
-          <div>
-            <label for="validationCustom01" class="form-label">State</label>
-            <input class="form-control" type="text" id="validationCustom01" required />
-            <div class="valid-feedback">Looks good!</div>
-          </div>
+    <div class="min-vw-100 col-8 main-content">
+        <div class="row min-vw-100 d-flex justify-content-around roomfinder-data">
+            <form class="d-flex-column col-7 bg-light rounded p-3 my-3 needs-validation" novalidate>
 
-          <div>
-            <label for="validationCustom02" class="form-label">City</label>
-            <input class="form-control" type="text" id="validationCustom02" required />
-            <div class="valid-feedback">Looks good!</div>
-          </div>
+                <div class="col-md-12">
+                    <label for="validationCustom01" class="form-label">State</label>
+                    <input type="text" class="form-control" id="validationCustom01" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                </div>
 
-          <div>
-            <label for="exampleInputPassword1">Rent or Buy?</label>
-            <div class="d-flex flex-row justify-content-center my-3">
-              <input
-                type="radio"
-                class="btn-check mx-3"
-                name="rent"
-                id="rent"
-                autocomplete="off"
-                checked
-              />
-              <label class="btn btn-secondary mx-3 px-4 radio-selection" for="rent">Rent</label>
+                <div class="col-md-12">
+                    <label for="validationCustom02" class="form-label">City</label>
+                    <input type="text" class="form-control" id="validationCustom02" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                </div>
 
-              <input
-                type="radio"
-                class="btn-check"
-                name="buy"
-                id="buy"
-                autocomplete="off"
-                checked
-              />
-              <label class="btn btn-secondary mx-3 px-4 radio-selection" for="buy">Buy</label>
-            </div>
-          </div>
+  
+                <div class="col-md-12">
+                    <label for="validationCustom03" class="form-label">Budget</label>
+                    <input class="form-control" type="number" id="validationCustom03" required>
+                    <div class="valid-feedback">
+                    </div>
+                </div>
 
-          <div>
-            <label for="validationCustom03" class="form-label">Budget</label>
-            <input class="form-control" type="number" id="validationCustom03" required />
-            <div class="valid-feedback">Looks good!</div>
-          </div>
+                <!-- <div class="col-12 buttons-container">
+                    <label>Rent or Buy?</label>
+                    <div class="mx-auto text-center">
+                        <div class="mx-auto form-check">
+                            <button type="button" class="px-3 py-1 form-check-button" id="validationFormCheck2" value="rent" name="button-stacked" required>
+                            <label class="form-check-button" for="validationFormCheck2">Rent</label>
+                        </div>
+                        <div class="mx-auto form-check">
+                            <button type="button" class="px-3 py-1 form-check-button" id="validationFormCheck3" value="buy" name="button-stacked" required>
+                            <label class="form-check-label" for="validationFormCheck3">Buy</label>
+                        </div>
+    
+                    </div>
+                </div> -->
 
-          <button type="submit" class="py-2 px-3 my-2 btn btn-primary submit-data">Submit</button>
-        </form>
+                <button class="py-2 px-3 my-2 btn btn-primary submit-optional-data">Submit</button>
+            </form>
 
-        <form class="col-3 bg-light rounded p-3 my-2">
-          <div>
-            <label for="exampleInputPassword1">Food</label>
-            <input class="p-1 my-2" type="text" id="food" placeholder="Food" />
-          </div>
-          <div>
-            <label for="exampleInputPassword1">Coffee</label>
-            <input class="p-1 my-2" type="text" id="food" placeholder="Coffee" />
-          </div>
-          <button class="btn btn-primary my-3 optional-data" type="submit" disabled>Submit</button>
-        </form>
-      </div>
+            <form class="col-6 bg-light rounded p-3 my-2 needs-validation" novalidate>
+                <div class="col-md-12">
+                    <label for="validationCustom04" class="form-label">Food</label>
+                    <input class="form-control" type="text" id="validationCustom04" required>
+                    <div class="valid-feedback">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="validationCustom05" class="form-label">Coffee</label>
+                    <input class="form-control" type="text" id="validationCustom05" required>
+                    <div class="valid-feedback">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary my-3 optional-data">Submit</button>
+            </form>
+        </div>
     </div>
-    <footer>
-      <h2 class="text-center my-3">Current Weather</h2>
+    <footer class="min-vw-100 text-center">
+      <ul class="d-flex mx-2 justify-content-around text-center">
+          <li><a href="/">Terms and Conditions</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Contact Us</a></li>
+        <ul></ul>
     </footer>
   </body>
-  <link src="./assets/script.js" />
+  <script src="./assets/script.js"/></script>
 </html>
