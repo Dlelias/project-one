@@ -6,3 +6,11 @@
 .address {
   font-size: 100%;
 }
+
+.card-container {
+  background-image:url(./assets/images/rooms-image.JPG);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: cover;
+
+}

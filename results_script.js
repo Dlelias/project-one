@@ -1,7 +1,7 @@
 var data = JSON.parse(localStorage.getItem("cityData"));
 function tester() {
   for (var i = 0; i < data.items.length; i++) {
-    $(".card-container").append(`<div class="col-12 col-xl-3 col-md-5 p-5">
+    $(".card-container").append(`<div class="rounded col-12 col-xl-3 col-md-5 p-5">
     <div class="card h-100">
       <img src="${data.items[i].listing.images[0]}" class="min-w-100 card-img-top alt="..." />
       <div class="card-body">
