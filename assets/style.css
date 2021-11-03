@@ -22,13 +22,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1% 2% 1% 2%;
+    padding: 2%;
 }
 
 .navBar ul li {
     color: white;
     list-style-type: none;
-    font-size: 90%;
+    font-size: 60%;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+
 }
 
 .main-content{
@@ -53,17 +55,6 @@ body {
     }
   }
   
-
-.welcome-title {
-    margin-top: 2%;
-    font-size: 80%;
-    color: rgb(247, 247, 29);
-    animation: 1s ease-out 0s 1 slideInFromLeft;
-    font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Lato', sans-serif;
-    font-family: 'Roboto', sans-serif;
-}
-
 .roomfinder-data {
     min-width: 600px;
 }
@@ -108,3 +99,12 @@ footer ul li a {
     text-decoration: none;
     color: white;
 }
+
+
+/* responsiveness */
+@media (max-width: 500px) {
+    footer {
+        padding-top: 5%;
+        font-size: 130%;
+    }
+  }

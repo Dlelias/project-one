@@ -3,10 +3,10 @@ function tester() {
   for (var i = 0; i < data.items.length; i++) {
     $(".card-container").append(`<div class="col-12 col-xl-3 col-md-5 p-5">
     <div class="card h-100">
-      <img src="${data.items[i].listing.images[0]}" class="card-img-top alt="..." />
+      <img src="${data.items[i].listing.images[0]}" class="min-w-100 card-img-top alt="..." />
       <div class="card-body">
-        <h5 class="card-header">${data.items[i].listing.geo_location.full_address}</h5>
-        <p class="card-text">
+        <h5 class="card-header address my-6">${data.items[i].listing.geo_location.full_address}</h5>
+        <p class="card-text monthly-price my-3">
           ${"$" + data.items[i].listing.rates.monthly_rate + " monthly"}
         </p>
         <a href="#" class="btn btn-primary myButton" id="${i}">View Photos</a>
