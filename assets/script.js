@@ -50,18 +50,17 @@ function submitData(event) {
 var allRoomData = JSON.parse(localStorage.getItem("cityStorage")) || [];
 
 // function that takes the state,city,budget and stores in the user database
-function storeRoomData(state,city,budget) {
-    var roomData = {
-        stateInfo: state,
-        cityInfo: city,
-        budgetInfo: budget,
-    };
+function storeRoomData(state, city, budget) {
+  var roomData = {
+    stateInfo: state,
+    cityInfo: city,
+    budgetInfo: budget,
+  };
 
-    allRoomData.push(roomData);
-    localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
+  allRoomData.push(roomData);
+  localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
 
-    location.href="results.html";
-
+  // location.href = "results.html";
 }
 
 // get the lattituude and longitude information using Google Maps API based off city and sate
@@ -180,20 +179,14 @@ function formValidation() {
 
   // Loop over them and prevent submission
   Array.prototype.slice.call(forms).forEach(function (form) {
-    form.addEventListener(
-      "click",
-      function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-      })})
+    form.addEventListener("click", function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    });
+  });
+}
 formValidation();
 
-  
-  
-submitDataButton.addEventListener("submit", submitData());
-
-formValidation();
-
-// submitDataButton.addEventListener("submit", submitData);
+submitDataButton.addEventListener("submit", submitData);
