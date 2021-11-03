@@ -8,7 +8,6 @@ var city = document.querySelector("#validationCustom02");
 var budget = document.querySelector("#validationCustom03");
 
 // var rentOrBuyOption = document.querySelector(".form-check-button"); // select if user selected either rent or buy option
-// / button to submit optional data
 var submitOptionalDataButton = document.querySelector(".submit-optional-data"); 
 
 
