@@ -45,11 +45,6 @@ function submitData(event) {
     getLocationData(stateValue, cityValue, budgetValue);
     
 
-
-
-  // store data into the database
-  storeRoomData(stateValue, cityValue, budgetValue);
-
   state.value = "";
   city.value = "";
   budget.value = "";
@@ -69,7 +64,7 @@ function storeRoomData(state,city,budget) {
     allRoomData.push(roomData);
     localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
     console.log(localStorage.getItem("roomStorage"))
-    location.href="results.html";
+    location.href = `results.html?city=${cityValue}&state=${stateValue}&budget=${budgetValue}`
 
 }
 
