@@ -9,7 +9,7 @@ var budget = document.querySelector("#validationCustom03");
 
 // var rentOrBuyOption = document.querySelector(".form-check-button"); // select if user selected either rent or buy option
 
-var submitOptionalDataButton = document.querySelector(".submit-optional-data"); / button to submit optional data
+var submitOptionalDataButton = document.querySelector(".submit-optional-data"); 
 
 
 //globals
