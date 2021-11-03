@@ -20,7 +20,6 @@ function tester() {
   </div>`);
   }
 }
-
 // Event-listener (button pressed)
 $(".card-container").on("click", ".myButton", function (event) {});
 

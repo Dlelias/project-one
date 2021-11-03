@@ -50,15 +50,18 @@ function submitData(event) {
 var allRoomData = JSON.parse(localStorage.getItem("cityStorage")) || [];
 
 // function that takes the state,city,budget and stores in the user database
-function storeRoomData(state, city, budget) {
-  var roomData = {
-    stateInfo: state,
-    cityInfo: city,
-    budgetInfo: budget,
-  };
+function storeRoomData(state,city,budget) {
+    var roomData = {
+        stateInfo: state,
+        cityInfo: city,
+        budgetInfo: budget,
+    };
 
-  allRoomData.push(roomData);
-  localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
+    allRoomData.push(roomData);
+    localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
+
+    location.href="results.html";
+
 }
 
 // get the lattituude and longitude information using Google Maps API based off city and sate
@@ -184,14 +187,13 @@ function formValidation() {
           event.preventDefault();
           event.stopPropagation();
         }
+      })})
+formValidation();
 
-        form.classList.add("was-validated");
-      },
-      false
-    );
-  });
-}
+  
+  
+submitDataButton.addEventListener("submit", submitData());
 
 formValidation();
 
-submitDataButton.addEventListener("submit", submitData);
+// submitDataButton.addEventListener("submit", submitData);
