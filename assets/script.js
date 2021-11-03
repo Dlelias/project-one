@@ -46,8 +46,9 @@ function submitData(event) {
 
     state.value = '';
     city.value = '';
-    budget.value = '';
+    budget.value = '';  
     
+
 }
 
 // variable to store every room data info into database
@@ -64,7 +65,7 @@ function storeRoomData(state,city,budget) {
     allRoomData.push(roomData);
     localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
 
-
+    location.href="results.html";
 
 }
 
@@ -97,9 +98,11 @@ function getRoomData(data, budgetMax) {
     console.log(roomAPIURL);
     fetch(roomAPIURL)
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then (function(data) {
+        console.log("hola")
+        localStorage.setItem("listData", JSON.stringify(data))
+    })
     .catch(err => console.log(err))
-
 }
 
 //formats city and stat as query paramameter strings and returns them in an array
@@ -179,6 +182,6 @@ function formValidation() {
 formValidation();
   
   
-submitDataButton.addEventListener("submit", submitData);
+submitDataButton.addEventListener("submit", submitData());
 
 
