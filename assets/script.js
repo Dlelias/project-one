@@ -21,25 +21,29 @@ var GoogleAPIKey = "AIzaSyCmEuQHyUcrKoHajuYANO4wsVkMzEJX1GA"; // Google Maps API
 
 // function that submits data
 function submitData(event) {
-  event.preventDefault();
-  // functions that grab data from api and
-  if (state) {
-    stateValue = state.value.trim();
-  }
+    console.log("line 25")
+    event.preventDefault();
+    // functions that grab data from api and 
+    if (state) {
+        stateValue = state.value.trim();
+    }
+
+    if (city) {
+        cityValue = city.value.trim();
+    }
+
+    if (budget) {
+        budgetValue = budget.value;
+    }
 
   if (city) {
     cityValue = city.value.trim();
   }
 
-  if (budget) {
-    budgetValue = budget.value;
-  }
-
-  // function grabs lat/lon coordiantes based off inputted state/city
-  getLocationData(stateValue, cityValue, budgetValue);
-
-  // store data into the database
-  storeRoomData(stateValue, cityValue, budgetValue);
+    // function grabs lat/lon coordiantes based off inputted state/city
+    console.log("line 42", stateValue, cityValue, budgetValue)
+    getLocationData(stateValue, cityValue, budgetValue);
+    
 
   state.value = "";
   city.value = "";
@@ -57,8 +61,10 @@ function storeRoomData(state, city, budget) {
     budgetInfo: budget,
   };
 
-  allRoomData.push(roomData);
-  localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
+    allRoomData.push(roomData);
+    localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
+    console.log(localStorage.getItem("roomStorage"))
+    location.href = `results.html?city=${cityValue}&state=${stateValue}&budget=${budgetValue}`
 
   // location.href = "results.html";
 }
@@ -66,22 +72,22 @@ function storeRoomData(state, city, budget) {
 // get the lattituude and longitude information using Google Maps API based off city and sate
 // take the ne and sw lat/long info and add to roomAPIURL
 // do fetch requiest on roomAPIURL;
-function getLocationData(state, city, budget) {
-  var GoogleAPIURL =
-    "https://maps.googleapis.com/maps/api/geocode/json?address=" +
-    city +
-    "," +
-    state +
-    "&key=" +
-    GoogleAPIKey;
-  fetch(GoogleAPIURL)
+function getLocationData(state,city,budget) {
+    console.log("line 79")
+
+    var GoogleAPIURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "," + state + "&key=" + GoogleAPIKey;
+    fetch(GoogleAPIURL)
     .then(function (response) {
-      if (response.ok) {
-        response.json().then(function (data) {
-          // pass the data containing lat/lon and coordinates to getRoomData to get the room info
-          getRoomData(data, budget);
-        });
-      }
+        console.log("line 84")
+        if (response.ok) {
+            response.json().then(function (data) {
+                
+                console.log("line 88",data)
+                // pass the data containing lat/lon and coordinates to getRoomData to get the room info
+                getRoomData(data,budget);
+            })
+        }
+
     })
     .catch(function (error) {
       console.log(error);
@@ -106,10 +112,13 @@ function getRoomData(data, budgetMax) {
   console.log(roomAPIURL);
   fetch(roomAPIURL)
     .then((res) => res.json())
-
     .then(function (data) {
       localStorage.setItem("cityData", JSON.stringify(data));
       console.log(data);
+    console.log("line 103",data,budgetMax)
+        console.log("line 109", data)
+            // store data into the database
+    storeRoomData(stateValue, cityValue, budgetValue);
     })
     .catch((err) => console.log(err));
 }
@@ -179,14 +188,21 @@ function formValidation() {
 
   // Loop over them and prevent submission
   Array.prototype.slice.call(forms).forEach(function (form) {
-    form.addEventListener("click", function (event) {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-    });
-  });
-}
+    form.addEventListener(
+      "click",
+      function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      })})
+    }
 formValidation();
 
-submitDataButton.addEventListener("submit", submitData);
+  
+  
+submitDataButton.addEventListener("submit",(event) => {
+    console.log("hey we got to line 185")
+    submitData(event)
+});
+
