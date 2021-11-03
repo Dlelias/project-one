@@ -8,8 +8,8 @@ var city = document.querySelector("#validationCustom02");
 var budget = document.querySelector("#validationCustom03");
 
 // var rentOrBuyOption = document.querySelector(".form-check-button"); // select if user selected either rent or buy option
-
-var submitOptionalDataButton = document.querySelector(".submit-optional-data"); / button to submit optional data
+// / button to submit optional data
+var submitOptionalDataButton = document.querySelector(".submit-optional-data"); 
 
 
 //globals
@@ -93,7 +93,7 @@ function getLocationData(state,city,budget) {
 // get room information based off of inputted value
 // sampleURL: https://www.roomster.com/api/search?search_params.page_number=1&search_params.service_type=HaveShare&search_params.sort=LastActivity&search_params.budget.min=0&search_params.budget.max=5000&search_params.age.min=18&search_params.age.max=99&                                                                                     search_params.geo.lat_sw=33.732742&search_params.geo.lng_sw=-118.248966&search_params.geo.lat_ne=33.885459&search_params.geo.lng_ne=-118.063162&search_params.include_total_count=true&search_params.is_cache_loaded=false&search_params.searchLocation=Long%2520Beach%252C%2520CA%252C%2520USA&search_params.page_size=11
 function getRoomData(data, budgetMax) {
-    var roomAPIURL = 'https://cors-anywhere.herokuapp.com/https://www.roomster.com/api/search?search_params.page_number=1&search_params.service_type=HaveShare&search_params.sort=LastActivity&search_params.budget.min=0&search_params.budget.max=' + budgetMax + '&search_params.age.min=18&search_params.age.max=99&search_params.geo.lat_sw=' + data["results"][0]["geometry"]["bounds"]["southwest"].lat + '&search_params.geo.lng_sw=' + data["results"][0]["geometry"]["bounds"]["southwest"].lng + '&search_params.geo.lat_ne=' + data["results"][0]["geometry"]["bounds"]["northeast"].lat + "&search_params.geo.lng_ne=" + data["results"][0]["geometry"]["bounds"]["northeast"].lng + "&search_params.include_total_count=true&search_params.is_cache_loaded=false";
+    var roomAPIURL = 'https://wendy-cors.herokuapp.com/https://www.roomster.com/api/search?search_params.page_number=1&search_params.service_type=HaveShare&search_params.sort=LastActivity&search_params.budget.min=0&search_params.budget.max=' + budgetMax + '&search_params.age.min=18&search_params.age.max=99&search_params.geo.lat_sw=' + data["results"][0]["geometry"]["bounds"]["southwest"].lat + '&search_params.geo.lng_sw=' + data["results"][0]["geometry"]["bounds"]["southwest"].lng + '&search_params.geo.lat_ne=' + data["results"][0]["geometry"]["bounds"]["northeast"].lat + "&search_params.geo.lng_ne=" + data["results"][0]["geometry"]["bounds"]["northeast"].lng + "&search_params.include_total_count=true&search_params.is_cache_loaded=false";
     console.log(roomAPIURL);
     fetch(roomAPIURL)
     .then(res => res.json())
