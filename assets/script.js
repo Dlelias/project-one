@@ -54,18 +54,19 @@ function submitData(event) {
 var allRoomData = JSON.parse(localStorage.getItem("cityStorage")) || [];
 
 // function that takes the state,city,budget and stores in the user database
-function storeRoomData(state,city,budget) {
-    var roomData = {
-        stateInfo: state,
-        cityInfo: city,
-        budgetInfo: budget,
-    };
+function storeRoomData(state, city, budget) {
+  var roomData = {
+    stateInfo: state,
+    cityInfo: city,
+    budgetInfo: budget,
+  };
 
     allRoomData.push(roomData);
     localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
     console.log(localStorage.getItem("roomStorage"))
     location.href = `results.html?city=${cityValue}&state=${stateValue}&budget=${budgetValue}`
 
+  // location.href = "results.html";
 }
 
 // get the lattituude and longitude information using Google Maps API based off city and sate
@@ -204,5 +205,4 @@ submitDataButton.addEventListener("submit",(event) => {
     console.log("hey we got to line 185")
     submitData(event)
 });
-
 

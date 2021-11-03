@@ -1,22 +1,18 @@
-var cardImageEl = "url for property image";
-var cardHeaderEl = "Address";
-var cardTextEl = "Price/size";
-var GoogleAPIKey = "AIzaSyCmEuQHyUcrKoHajuYANO4wsVkMzEJX1GA";
-
-// var data = JSON.parse(localStorage.getItem("cityData"));
-
-
-// results javascript
-
-function getUrlVars(){
-  var vars = []
-  var hash;
-  var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-  for (var i = 0; i < hashes.length; i++)
-  {
-    hash = hashes[i].split('=');
-    vars.push(hash[0]);
-    vars[hash[0]] = hash[1];
+var data = JSON.parse(localStorage.getItem("cityData"));
+function tester() {
+  for (var i = 0; i < 8; i++) {
+    $(".card-container").append(`<div class="col-12 col-xl-3 col-md-5 p-5">
+    <div class="card"  >
+      <img src="${data.items[i].listing.images[0]}" class="card-img-top alt="..." />
+      <div class="card-body">
+        <h5 class="card-header">${data.items[i].listing.geo_location.full_address}</h5>
+        <p class="card-text">
+          ${"$" + data.items[i].listing.rates.monthly_rate + " monthly"}
+        </p>
+        <a href="#" class="btn btn-primary myButton" id="${i}">View Photos</a>
+      </div>
+    </div>
+  </div>`);
   }
   return vars;
 }
@@ -83,7 +79,22 @@ function tester() {
   var budget = getUrlVars()["budget"]
   getLocationData(state,city,budget)
 }
-// Event-listener (button pressed)
-$(".card-container").on("click", ".myButton", function (event) {});
+// Event-listener photo gallery buttons
+$(".card-container").on("click", ".myButton", function (event) {
+  var selectedProperty = this.id;
+  viewPhotos(selectedProperty);
+});
+
+// Photo gallery for selected property
+function viewPhotos(selectedProperty) {
+  $(".card-container").empty();
+  for (var i = 0; i < data.items[selectedProperty].listing.images.length; i++) {
+    $(".card-container").append(`<div class="col-12 col-xl-3 col-md-5 p-5">
+    <div class="card" >
+      <img src="${data.items[selectedProperty].listing.images[i]}" class="card-img-top alt="..." />     
+    </div>
+  </div>`);
+  }
+}
 
 tester();
