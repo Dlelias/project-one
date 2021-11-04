@@ -45,13 +45,11 @@ function submitData(event) {
     getLocationData(stateValue, cityValue, budgetValue);
     
 
-  state.value = "";
-  city.value = "";
-  budget.value = "";
+//   state.value = "";
+//   city.value = "";
+//   budget.value = "";
 }
 
-// variable to store every room data info into database
-var allRoomData = JSON.parse(localStorage.getItem("cityStorage")) || [];
 
 // function that takes the state,city,budget and stores in the user database
 function storeRoomData(state, city, budget) {
@@ -68,6 +66,10 @@ function storeRoomData(state, city, budget) {
 
   // location.href = "results.html";
 }
+
+// variable to store every room data info into database
+var allRoomData = JSON.parse(localStorage.getItem("roomStorage")) || [];
+
 
 // get the lattituude and longitude information using Google Maps API based off city and sate
 // take the ne and sw lat/long info and add to roomAPIURL
@@ -114,69 +116,9 @@ function getRoomData(data, budgetMax) {
     .then((res) => res.json())
     .then(function (data) {
       localStorage.setItem("cityData", JSON.stringify(data));
-      console.log(data);
-    console.log("line 103",data,budgetMax)
-        console.log("line 109", data)
-            // store data into the database
     storeRoomData(stateValue, cityValue, budgetValue);
     })
     .catch((err) => console.log(err));
-}
-
-//formats city and stat as query paramameter strings and returns them in an array
-function formatCityState(citySearch, state) {
-  var formattedStrings = [];
-  // splits string if spaces
-  var city = citySearch.split(" ");
-  if (city.length > 1) {
-    // if multiple words
-    city[0] += "%2520"; // appends space string to first word
-    city[1] += "%252C%2520"; // appends comma and space string to second word
-    citySearch = city[0] + city[1]; //redefines city search to query param form
-    console.log(citySearch);
-    formattedStrings.push(citySearch);
-  } else {
-    citySearch += "%252C%2520"; // if city = one word then append comma and space string
-    console.log(citySearch);
-    formattedStrings.push(citySearch);
-  }
-
-  state += "%252C%2520"; //appends comma and space to acheive query param form
-  formattedStrings.push(state);
-
-  return formattedStrings;
-}
-
-//returns room listings data based on given budget, city and geo location values
-function fetchRoomListings(
-  budgetMin = 0,
-  budgetMax,
-  citySearch,
-  state,
-  swLat,
-  swLng,
-  neLat,
-  neLng
-) {
-  var url = roomsBaseApi;
-  var responseData;
-
-  var cityStateStrings = formatCityState(citySearch, state);
-
-  citySearch = cityStateStrings[0];
-  state = cityStateStrings[1];
-
-  //appends dynamic query parameters string to base url for fetch. each input is injected into the query string
-  url += `search_params.sort=LastActivity&search_params.budget.min=${budgetMin}&search_params.budget.max=${budgetMax}&search_params.geo.lat_sw=${swLat}&search_params.geo.lng_sw=${swLng}&search_params.geo.lat_ne=${neLat}&search_params.geo.lng_ne=${neLng}&search_params.searchLocation=${citySearch}${state}USA&search_params.page_size=11`;
-
-  console.log(url);
-
-  // fetch room list data
-  responseData = fetch(url)
-    .then((response) => response.json())
-    .then((data) => data.items);
-
-  return responseData;
 }
 
 // used to validate that user has inputted information or else form will not be submitted
