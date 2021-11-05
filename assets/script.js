@@ -62,8 +62,6 @@ var allRoomData = JSON.parse(localStorage.getItem("roomStorage")) || [];
 // take the ne and sw lat/long info and add to roomAPIURL
 // do fetch requiest on roomAPIURL;
 function getLocationData(state,city,budget) {
-    console.log("line 79")
-
     var GoogleAPIURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "," + state + "&key=" + GoogleAPIKey;
     fetch(GoogleAPIURL)
     .then(function (response) {
