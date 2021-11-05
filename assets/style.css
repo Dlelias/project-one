@@ -1,5 +1,6 @@
 * {
     font-family: 'Roboto', sans-serif;
+
 }
 
 body {
@@ -33,7 +34,7 @@ body {
     text-align: center;
     margin:0;
     min-width: 100vw;
-    min-height: 650px;
+    min-height: 670px;
     align-content: center;
     background-image:url(./images/rommies\ .jpeg);
     background-repeat:no-repeat;
@@ -64,39 +65,23 @@ body {
   
 /* ***** styling main webpage *********** */
 .roomfinder-data {
-    min-width: 600px;
+    min-width: 800px;
 }
 
 .roomfinder-data form div {
-    padding: 3%;
+    padding: 2%;
 }
 
-.form-check {
-    margin-left: 5%;
-}
-
+/* ****** styling for form check validation ********** */
 #validationFormCheck2, #validationFormCheck3 {
     cursor: pointer;
     border-radius: 10px;
     min-width: 100px;
 }
 
-.form-check-input {
-    list-style-type: none;
-}
-
-.form-check-button {
-    border-radius: 5px;
-}
-
-.form-check-button:focus, .form-check-button:active {
-    background-color: rgb(37, 104, 37);
-}
-
 /* styling footer section of main webpage */
  footer {
      margin: 0 auto;
-     text-align: center;
  }
 
 footer ul li {
