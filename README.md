@@ -23,10 +23,14 @@ The user will be present with a form, which they will need enter the state, city
 Once the user completes these search parameters they will be presented with their results based on the information they have entered.
 
 The results will contain a photo, the address, monthly cost, and an option for view photos of the properties. 
+  
+![alt-text](./screenshots/results.JPG "results")
 
 When the user selects view photos, images of the selected property will display.
 
 The user will be presented with a home option and back to results option.
+  
+![alt-text](./screenshots/photo-properties.JPG "photo-properties")
 
 When the user selects the home button they will be directed to the home page.
 
