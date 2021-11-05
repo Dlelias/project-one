@@ -18,6 +18,8 @@ When the user visits the homepage they will find a user friendly interface.
 
 The user will be present with a form, which they will need enter the state, city, and budget. 
 
+![alt-text](./screenshots/main-page.JPG "main")
+
 Once the user completes these search parameters they will be presented with their results based on the information they have entered.
 
 The results will contain a photo, the address, monthly cost, and an option for view photos of the properties. 
