@@ -30,7 +30,7 @@ When the user selects view photos, images of the selected property will display.
 
 The user will be presented with a home option and back to results option.
   
-![alt-text](./screenshots/photo-properties.JPG "photo-properties")
+![alt-text](./screenshots/photos-properties.JPG "photo-properties")
 
 When the user selects the home button they will be directed to the home page.
 
