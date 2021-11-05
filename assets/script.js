@@ -14,7 +14,6 @@ var GoogleAPIKey = "AIzaSyCmEuQHyUcrKoHajuYANO4wsVkMzEJX1GA"; // Google Maps API
 
 // function that submits data
 function submitData(event) {
-    console.log("line 25")
     event.preventDefault();
 
     // takes the values inputted by user
@@ -68,7 +67,6 @@ function getLocationData(state,city,budget) {
     var GoogleAPIURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "," + state + "&key=" + GoogleAPIKey;
     fetch(GoogleAPIURL)
     .then(function (response) {
-        console.log("line 84")
         if (response.ok) {
             response.json().then(function (data) {
                 
@@ -76,7 +74,6 @@ function getLocationData(state,city,budget) {
                 getRoomData(data,budget);
             })
         }
-
     })
     .catch(function (error) {
       console.log(error);
@@ -121,7 +118,6 @@ function formValidation() {
           event.preventDefault()
           event.stopPropagation()
         }
-
         form.classList.add('was-validated')
       }, false)
     })
