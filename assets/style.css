@@ -106,12 +106,16 @@ footer ul li a {
 
 /* styling ternd and conditions webpage */
 
+.terms-and-conditions {
+    padding: 5%;
+}
+
 .terms-and-conditions-image {
     max-width: 250px;
 }
 
 .terms-and-conditions-header {
-    font-size: 130%;
+    font-size: 250%;
 }
 
 .terms-and-conditions-info {
@@ -126,3 +130,7 @@ footer ul li a {
         font-size: 130%;
     }
   }
+
+  
+
+
