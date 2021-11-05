@@ -1,11 +1,13 @@
+/* Image sizing */
 .card-img-top {
   width: 100%;
   height: 15vw;
+  min-height: 250px;
   object-fit: cover;
 }
 
+/* fixes address line-height */
 .address {
+  min-height: 55px;
   font-size: 100%;
 }
-
-
