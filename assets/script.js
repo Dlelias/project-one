@@ -29,10 +29,6 @@ function submitData(event) {
         budgetValue = budget.value;
     }
 
-  if (city) {
-    cityValue = city.value.trim();
-  }
-
     // function grabs lat/lon coordiantes based off inputted state/city
     getLocationData(stateValue, cityValue, budgetValue);
     }
