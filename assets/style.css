@@ -1,5 +1,4 @@
 * {
-
     font-family: 'Roboto', sans-serif;
 }
 
@@ -44,6 +43,7 @@ body {
     image-rendering: crisp-edges;
 }
 
+/* CSS animation to make text appear from the left when webpage loads */
 @keyframes slideInFromLeft {
     0% {
       transform: translateX(-100%);
@@ -52,7 +52,20 @@ body {
       transform: translateX(0);
     }
   }
+
   
+
+  /* fading in CSS animation */
+  @keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+/* ***** styling main webpage *********** */
 .roomfinder-data {
     min-width: 600px;
 }
@@ -83,6 +96,8 @@ body {
 .form-check-button:focus, .form-check-button:active {
     background-color: rgb(37, 104, 37);
 }
+
+/* styling footer section of main webpage */
  footer {
      margin: 0 auto;
      text-align: center;
@@ -98,16 +113,31 @@ footer ul li a {
     color: white;
 }
 
+/******** styling about webpage ************/
+
+.about-section {
+    animation: 1s ease-out 0s 1 FadeIn;
+}
+.about-description {
+    line-height: 2.5;
+}
+
 /* styling contacts webpage */
+
+.contact-page {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+
+}
 .contact-name {
     font-size: 120%;
   }
 
 
-/* styling ternd and conditions webpage */
+/********* styling terms and conditions webpage ************/
 
 .terms-and-conditions {
     padding: 5%;
+    background-color: #00488A;
 }
 
 .terms-and-conditions-image {
@@ -115,15 +145,38 @@ footer ul li a {
 }
 
 .terms-and-conditions-header {
-    font-size: 250%;
+    font-size: 150%;
+    font-weight: 900;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+
 }
 
 .terms-and-conditions-info {
-    font-size: 90%;
+    font-size: 110%;
+    animation: 2s ease-out 0s 1 slideInFromLeft;
+
 }
 
-
 /* responsiveness */
+
+@media (max-width: 950px) {
+    .terms-and-conditions-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .terms-and-conditions-header {
+        font-size: 90%;
+        font-weight: 900;
+    }
+
+    .terms-and-conditions-image {
+        margin: 0% 1%;
+    }
+
+
+  }
+
 @media (max-width: 500px) {
     footer {
         padding-top: 5%;
