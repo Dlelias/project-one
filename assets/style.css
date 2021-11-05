@@ -72,6 +72,11 @@ body {
     padding: 2%;
 }
 
+.submit-data:hover {
+    color: rgb(0, 180, 180);
+
+}
+
 /* ****** styling for form check validation ********** */
 #validationFormCheck2, #validationFormCheck3 {
     cursor: pointer;
@@ -93,6 +98,10 @@ footer ul li {
 footer ul li a {
     text-decoration: none;
     color: white;
+}
+
+footer ul li a:hover {
+    color: rgb(0, 180, 180);
 }
 
 /******** styling about webpage ************/
