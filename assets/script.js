@@ -7,13 +7,6 @@ var state = document.querySelector("#validationCustom01");
 var city = document.querySelector("#validationCustom02");
 var budget = document.querySelector("#validationCustom03");
 
-// var rentOrBuyOption = document.querySelector(".form-check-button"); // select if user selected either rent or buy option
-// / button to submit optional data
-var submitOptionalDataButton = document.querySelector(".submit-optional-data");
-
-//globals
-
-// var roomsBaseApi = "https://cors-anywhere.herokuapp.com/https://www.roomster.com/api/search?"; //base url for roomster api in develop mode. uses a proxy -- make sure you authenticate to the server.
 var roomsBaseApi = "https://www.roomster.com/api/search?"; // base url to use when deploying to production -- you do not need a proxy server in prod**important
 var GoogleAPIKey = "AIzaSyCmEuQHyUcrKoHajuYANO4wsVkMzEJX1GA"; // Google Maps API key
 
@@ -23,7 +16,8 @@ var GoogleAPIKey = "AIzaSyCmEuQHyUcrKoHajuYANO4wsVkMzEJX1GA"; // Google Maps API
 function submitData(event) {
     console.log("line 25")
     event.preventDefault();
-    // functions that grab data from api and 
+
+    // takes the values inputted by user
     if (state) {
         stateValue = state.value.trim();
     }
@@ -41,14 +35,8 @@ function submitData(event) {
   }
 
     // function grabs lat/lon coordiantes based off inputted state/city
-    console.log("line 42", stateValue, cityValue, budgetValue)
     getLocationData(stateValue, cityValue, budgetValue);
-    
-
-//   state.value = "";
-//   city.value = "";
-//   budget.value = "";
-}
+    }
 
 
 // function that takes the state,city,budget and stores in the user database
@@ -61,10 +49,10 @@ function storeRoomData(state, city, budget) {
 
     allRoomData.push(roomData);
     localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
-    console.log(localStorage.getItem("roomStorage"))
+    
+    // redirect to the results.html webpage after storing user inputs in local storage
     location.href = `results.html?city=${cityValue}&state=${stateValue}&budget=${budgetValue}`
 
-  // location.href = "results.html";
 }
 
 // variable to store every room data info into database
@@ -84,8 +72,7 @@ function getLocationData(state,city,budget) {
         if (response.ok) {
             response.json().then(function (data) {
                 
-                console.log("line 88",data)
-                // pass the data containing lat/lon and coordinates to getRoomData to get the room info
+                // pass the data containing lat/lon coordinates and budget in getRoomData to get the room info
                 getRoomData(data,budget);
             })
         }
@@ -96,8 +83,7 @@ function getLocationData(state,city,budget) {
     });
 }
 
-// get room information based off of inputted value
-// sampleURL: https://www.roomster.com/api/search?search_params.page_number=1&search_params.service_type=HaveShare&search_params.sort=LastActivity&search_params.budget.min=0&search_params.budget.max=5000&search_params.age.min=18&search_params.age.max=99&                                                                                     search_params.geo.lat_sw=33.732742&search_params.geo.lng_sw=-118.248966&search_params.geo.lat_ne=33.885459&search_params.geo.lng_ne=-118.063162&search_params.include_total_count=true&search_params.is_cache_loaded=false&search_params.searchLocation=Long%2520Beach%252C%2520CA%252C%2520USA&search_params.page_size=11
+// get room information based off of inputted data from Google Maps API and desired max budget
 function getRoomData(data, budgetMax) {
   var roomAPIURL =
     "https://wendy-cors.herokuapp.com/https://www.roomster.com/api/search?search_params.page_number=1&search_params.service_type=HaveShare&search_params.sort=LastActivity&search_params.budget.min=0&search_params.budget.max=" +
@@ -111,7 +97,6 @@ function getRoomData(data, budgetMax) {
     "&search_params.geo.lng_ne=" +
     data["results"][0]["geometry"]["bounds"]["northeast"].lng +
     "&search_params.include_total_count=true&search_params.is_cache_loaded=false";
-  console.log(roomAPIURL);
   fetch(roomAPIURL)
     .then((res) => res.json())
     .then(function (data) {
@@ -144,10 +129,8 @@ function formValidation() {
 
 formValidation();
 
-  
-  
+// when user hits submit button, submitData function fires where it submits user inputs and returns data    
 submitDataButton.addEventListener("submit",(event) => {
-    console.log("hey we got to line 185")
     submitData(event)
 });
 

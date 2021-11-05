@@ -1,5 +1,10 @@
+// this script is for javascript functionality on results.html webpage
+
+
+// get all the data we retrived from Roomster API
 var data = JSON.parse(localStorage.getItem("cityData"));
 
+// grab all the data from the API and put each of their images, addresses, amd monthly rates in its own card
 function tester() {
   for (var i = 0; i < data.items.length; i++) {
     $(".card-container").append(`<div class="rounded col-12 col-xl-3 col-md-5 p-5">
@@ -21,6 +26,7 @@ $(".card-container").on("click", ".myButton", function (event) {
   var selectedProperty = this.id;
   viewPhotos(selectedProperty);
 });
+
 // Photo gallery for selected property
 function viewPhotos(selectedProperty) {
   $(".card-container").empty();
