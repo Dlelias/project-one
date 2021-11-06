@@ -79,6 +79,7 @@ body {
     border: 0.25px solid rgb(202, 199, 199);
     border-radius: 4px;
     margin-bottom: 5%;
+    cursor: pointer;
 }
 
 .submit-data, #clearBtn {
