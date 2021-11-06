@@ -46,7 +46,11 @@ When the user selects "Terms and Conditions" from the footer of the main webpage
   
 When the user selects "About" from the footer of the main webpage, the user will be redirected to the About webpage containing info on what Roomfinder website is about.
   
-![alt-text](./screenshots/about.JPG "about")
+![alt-text](./screenshots/about.JPG "About")
+  
+When the user selects "Contacts" from the footer of the main webpage, the user will be redirected to the Contacts webpage containing info on how to contact website administrators.
+  
+![alt-text](./screenshots/contacts.JPG "contacts")
 
 ## Prototypes
 
@@ -76,6 +80,4 @@ https://github.com/asharif123
 Braulio Mora
 https://github.com/BraulioCP59
 
-## License
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
 
