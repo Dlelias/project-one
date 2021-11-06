@@ -1,209 +1,209 @@
 * {
-    font-family: 'Roboto', sans-serif;
-
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-    background-color: white;
+  background-color: white;
 }
 
-.navBar, footer{
-   margin: 0;
-   padding:0;
-   overflow: hidden;
-   background: linear-gradient(to left, #0c0c0e, #525255);
-   text-align: center;
-   font-size: 200%;
+.navBar,
+footer {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(to left, #0c0c0e, #525255);
+  text-align: center;
+  font-size: 200%;
 }
 
 .navBar ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
 }
 
 .navBar ul li {
-    color: white;
-    list-style-type: none;
-    font-size: 60%;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+  color: white;
+  list-style-type: none;
+  font-size: 60%;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
-.main-content{
-    text-align: center;
-    margin:0;
-    min-width: 100vw;
-    min-height: 670px;
-    align-content: center;
-    background-image:url(./images/rommies\ .jpeg);
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size: cover;
-    image-rendering: crisp-edges;
+.main-content {
+  text-align: center;
+  margin: 0;
+  min-width: 100vw;
+  min-height: 670px;
+  align-content: center;
+  background-image: url(./images/rommies\ .jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  image-rendering: crisp-edges;
 }
-
-
 
 /* CSS animation to make text appear from the left when webpage loads */
 @keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  0% {
+    transform: translateX(-100%);
   }
+  100% {
+    transform: translateX(0);
+  }
+}
 
-  /* fading in CSS animation */
-  @keyframes FadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+/* fading in CSS animation */
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
   }
-  
+  100% {
+    opacity: 1;
+  }
+}
+
 /* ***** styling main webpage *********** */
 .roomfinder-data {
-    min-width: 375px;
+  min-width: 375px;
 }
 
 .roomfinder-data form div {
-    padding: 2%;
+  padding: 2%;
 }
 
 .list-item {
-    list-style-type: none;
-    border: 0.25px solid rgb(202, 199, 199);
-    border-radius: 4px;
-    margin-bottom: 5%;
-    cursor: pointer;
+  list-style-type: none;
+  border: 0.25px solid rgb(202, 199, 199);
+  border-radius: 4px;
+  margin-bottom: 5%;
+  cursor: pointer;
 }
 
-.submit-data, #clearBtn {
-    font-size: 60%;
+.submit-data,
+#clearBtn {
+  font-size: 60%;
 }
 
 .submit-data:hover {
-    color: rgb(0, 180, 180);
-
+  color: rgb(0, 180, 180);
 }
 
 aside {
-    min-width: 70px;
-    margin-left: 5%;
+  min-width: 70px;
+  margin-left: 5%;
 }
 
 /* ****** styling for form check validation ********** */
-#validationFormCheck2, #validationFormCheck3 {
-    cursor: pointer;
-    border-radius: 10px;
-    min-width: 100px;
+#validationFormCheck2,
+#validationFormCheck3 {
+  cursor: pointer;
+  border-radius: 10px;
+  min-width: 100px;
 }
 
-#clearBtn{
-    margin-top: 25px;
+#clearBtn {
+  margin-top: 25px;
+}
+
+#clearBtn:hover {
+  color: rgb(0, 180, 180);
 }
 
 /* styling footer section of main webpage */
- footer {
-     margin: 0 auto;
- }
+footer {
+  margin: 0 auto;
+}
 
 footer ul li {
-    font-size: 50%;
-    list-style-type: none;
-    margin: 2% auto;
+  font-size: 50%;
+  list-style-type: none;
+  margin: 2% auto;
 }
 
 footer ul li a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 footer ul li a:hover {
-    color: rgb(0, 180, 180);
+  color: rgb(0, 180, 180);
 }
 
 /******** styling about webpage ************/
 
 .about-section {
-    animation: 1s ease-out 0s 1 FadeIn;
+  animation: 1s ease-out 0s 1 FadeIn;
 }
 
 .about-description {
-    line-height: 2.5;
+  line-height: 2.5;
 }
 
 /* styling contacts webpage */
 .contact-page {
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .contact-name {
-    font-size: 120%;
+  font-size: 120%;
 }
 
 /********* styling terms and conditions webpage ************/
 
 .terms-and-conditions {
-    padding: 5%;
-    background-color: #00488A;
+  padding: 5%;
+  background-color: #00488a;
 }
 
 .terms-and-conditions-image {
-    max-width: 250px;
+  max-width: 250px;
 }
 
 .terms-and-conditions-header {
-    font-size: 150%;
-    font-weight: 900;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+  font-size: 150%;
+  font-weight: 900;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .terms-and-conditions-info {
-    font-size: 110%;
-    animation: 2s ease-out 0s 1 slideInFromLeft;
+  font-size: 110%;
+  animation: 2s ease-out 0s 1 slideInFromLeft;
 }
 
 /* responsiveness */
 
 @media (max-width: 950px) {
-    .terms-and-conditions-info {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .terms-and-conditions-header {
-        font-size: 90%;
-        font-weight: 900;
-    }
-
-    .terms-and-conditions-image {
-        margin: 0% 1%;
-    }
+  .terms-and-conditions-info {
+    display: flex;
+    flex-direction: column;
   }
 
-@media (max-width: 700px) {
-    .roomfinder-data {
-        display: flex;
-        justify-content: start;
-    }
+  .terms-and-conditions-header {
+    font-size: 90%;
+    font-weight: 900;
+  }
 
-    .h4, #recent-search-list li {
-        font-size: 60%;
-    }
+  .terms-and-conditions-image {
+    margin: 0% 1%;
+  }
+}
+
+@media (max-width: 700px) {
+  .roomfinder-data {
+    display: flex;
+    justify-content: start;
+  }
+
+  .h4,
+  #recent-search-list li {
+    font-size: 60%;
+  }
 }
 
 @media (max-width: 500px) {
-    footer {
-        padding-top: 5%;
-        font-size: 130%;
-    }
+  footer {
+    padding-top: 5%;
+    font-size: 130%;
   }
-
-  
-
-
+}
