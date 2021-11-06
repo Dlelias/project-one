@@ -40,9 +40,13 @@ Once the user if directed to the home page they will have the option to visit th
 
 When the user selects the back to results options they will be directed to the results page to explore other results. 
 
-When the user selects "Terms and Conditions" from the footer of the main webpage, the user will be redirected to the Terms and Conditions website containing info on how user privacy is handled.
+When the user selects "Terms and Conditions" from the footer of the main webpage, the user will be redirected to the Terms and Conditions page containing info on how user privacy is handled.
   
 ![alt-text](./screenshots/terms-and-conditions.JPG "terms")
+  
+When the user selects "About" from the footer of the main webpage, the user will be redirected to the About webpage containing info on what Roomfinder website is about.
+  
+![alt-text](./screenshots/about.JPG "about")
 
 ## Prototypes
 
