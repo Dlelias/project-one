@@ -14,7 +14,9 @@ On RoomFinder, users can explore housing options nationwide. The motivation for 
 
 *** How does RoomFinder work?**
 
-When the user visits the homepage they will find a user friendly interface. 
+When the user visits the homepage they will find a user friendly interface.
+  
+The footer contains "Terms and Conditions", "About", and a "Contact Us" webpage.
 
 The user will be present with a form, which they will need enter the state, city, and budget. 
 
@@ -38,7 +40,9 @@ Once the user if directed to the home page they will have the option to visit th
 
 When the user selects the back to results options they will be directed to the results page to explore other results. 
 
-
+When the user selects "Terms and Conditions" from the footer of the main webpage, the user will be redirected to the Terms and Conditions website containing info on how user privacy is handled.
+  
+![alt-text](./screenshots/terms-and-conditions.JPG "terms")
 
 ## Prototypes
 
