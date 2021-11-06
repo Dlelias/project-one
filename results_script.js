@@ -5,7 +5,6 @@ var data = JSON.parse(localStorage.getItem("cityData"));
 
 // Builds results page, 1 card per property
 function showResults() {
-
   for (var i = 0; i < data.items.length; i++) {
     $(".card-container").append(`<div class="rounded col-12 col-xl-3 col-md-5 p-5">
     <div class="card h-100">
