@@ -25,29 +25,43 @@
         <li>Welcome to RoomFinder!</li>
       </ul>
     </nav>
-    <div class="min-vw-100 col-md-8 main-content">
-        <div class="row min-vw-100 d-flex justify-content-around roomfinder-data">
-            <form class="rounded d-flex-column col-5 bg-light rounded my-5 needs-validation" novalidate>
-                <div class="col-md-12 mx-auto text-center">
-                    <label for="validationCustom01" class="form-label">State</label>
-                    <input type="text" class="form-control" placeholder="Enter state:" id="validationCustom01" required>
-                    <div class="valid-feedback">
-                    </div>
-                </div>
-                <div class="col-md-12 mx-auto">
-                    <label for="validationCustom02" class="form-label">City</label>
-                    <input type="text" class="form-control" placeholder="Enter city:" id="validationCustom02" required>
-                    <div class="valid-feedback">
-                    </div>
-                </div>
-                <div class="col-md-12 mx-auto">
-                    <label for="validationCustom03" class="form-label">Price Max</label>
-                    <input class="form-control" type="number" placeholder="Enter price max:" id="validationCustom03" required>
-                    <div class="valid-feedback">
-                    </div>
-                </div>
-                <button class="py-6 px-3 my-2 btn btn-dark submit-data">Submit</button>
+    
+    <div class="main-content">
+        <div class="row  d-flex justify-content-around roomfinder-data">
+            <form class="rounded d-flex-column col-3 bg-light rounded p-3 my-3 needs-validation" novalidate>
+              <div class="col-12 inner-form">
+                <div class=" col-md-12 text-center">
+                  <label for="validationCustom01" class="form-label">State</label>
+                  <input type="text" class="form-control" id="validationCustom01" required>
+                  <div class="valid-feedback">
+                  </div>
+              </div>
+
+              <div class="">
+                  <label for="validationCustom02" class="form-label">City</label>
+                  <input type="text" class="form-control" id="validationCustom02" required>
+                  <div class="valid-feedback">
+                  </div>
+              </div>
+
+
+              <div class="">
+                  <label for="validationCustom03" class="form-label">Budget</label>
+                  <input class="form-control" type="number" id="validationCustom03" required>
+                  <div class="valid-feedback">
+                  </div>
+              </div>
+              <button class="py-6 px-3 my-2 btn btn-primary submit-optional-data">Submit</button>
+              </div>
+
             </form>
+            <aside class="rounded col-2 bg-light p-3 my-3 d-flex flex-column align-items-center">
+              <h4 class="h4">Recent Searches</h4>
+              <ul class = "list-group"id="recent-search-list">
+
+              </ul>
+              <button class="btn btn-dark" id="clearBtn">Clear Searchers</button>
+            </aside>
         </div>
     </div>
     <footer class="min-vw-100 text-center">

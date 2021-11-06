@@ -84,6 +84,10 @@ body {
     min-width: 100px;
 }
 
+#clearBtn{
+    margin-top: 25px;
+}
+
 /* styling footer section of main webpage */
  footer {
      margin: 0 auto;

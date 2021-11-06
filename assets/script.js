@@ -1,16 +1,42 @@
 //selectors--------------------------------------------------------------------------------
 
 var submitDataButton = document.querySelector(".needs-validation"); // button to submit form containing state, city and budget data
-
+var recentSearchList = document.querySelector("#recent-search-list");
+var clearBtn = document.querySelector("#clearBtn");
 // selection for state, city and bugdet
 var state = document.querySelector("#validationCustom01");
 var city = document.querySelector("#validationCustom02");
 var budget = document.querySelector("#validationCustom03");
 
+
 var roomsBaseApi = "https://www.roomster.com/api/search?"; // base url to use when deploying to production -- you do not need a proxy server in prod**important
 var GoogleAPIKey = "AIzaSyCmEuQHyUcrKoHajuYANO4wsVkMzEJX1GA"; // Google Maps API key
 
 //functions--------------------------------------------------------------------------------
+
+
+
+//
+function loadSearchData(){
+  var roomData = JSON.parse(localStorage.getItem("roomStorage"));
+  console.log(roomData);
+  recentSearchList.innerHTML = '';
+  if(roomData)
+  {
+    for(var i = 0; i < roomData.length; i++)
+    {
+      var item = document.createElement("li");
+      item.setAttribute("class", "list-group-item")
+      item.innerHTML = `${roomData[i].cityInfo}, ${roomData[i].stateInfo}`
+      recentSearchList.append(item);
+      if(i == 4)
+      {
+        break;
+      }
+    }
+  }
+}
+
 
 // function that submits data
 function submitData(event) {
@@ -19,10 +45,12 @@ function submitData(event) {
     // takes the values inputted by user
     if (state) {
         stateValue = state.value.trim();
+        console.log("line 55 ",stateValue);
     }
 
     if (city) {
         cityValue = city.value.trim();
+        console.log("line 55 ",cityValue);
     }
 
     if (budget) {
@@ -42,16 +70,15 @@ function storeRoomData(state, city, budget) {
     budgetInfo: budget,
   };
 
+    // variable to store every room data info into database
+    var allRoomData = JSON.parse(localStorage.getItem("roomStorage")) || [];
     allRoomData.push(roomData);
     localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
-    
-    // redirect to the results.html webpage after storing user inputs in local storage
-    location.href = `results.html?city=${cityValue}&state=${stateValue}&budget=${budgetValue}`
 
+
+   location.href = "results.html";
 }
 
-// variable to store every room data info into database
-var allRoomData = JSON.parse(localStorage.getItem("roomStorage")) || [];
 
 
 // get the lattituude and longitude information using Google Maps API based off city and sate
@@ -59,6 +86,7 @@ var allRoomData = JSON.parse(localStorage.getItem("roomStorage")) || [];
 // do fetch requiest on roomAPIURL;
 function getLocationData(state,city,budget) {
     var GoogleAPIURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "," + state + "&key=" + GoogleAPIKey;
+    console.log(GoogleAPIURL);
     fetch(GoogleAPIURL)
     .then(function (response) {
         if (response.ok) {
@@ -92,6 +120,7 @@ function getRoomData(data, budgetMax) {
     .then((res) => res.json())
     .then(function (data) {
       localStorage.setItem("cityData", JSON.stringify(data));
+      console.log("line 148 ",cityValue);
     storeRoomData(stateValue, cityValue, budgetValue);
     })
     .catch((err) => console.log(err));
@@ -123,4 +152,27 @@ formValidation();
 submitDataButton.addEventListener("submit",(event) => {
     submitData(event)
 });
+
+clearBtn.addEventListener("click", (event) => {
+  localStorage.removeItem("roomStorage");
+  loadSearchData();
+})
+
+recentSearchList.addEventListener("click",(event) => {
+  var info = event.target.innerHTML;
+  info = info.split(', ');
+  console.log(info);
+  console.log(typeof(info));
+
+  stateValue = info[0];
+  cityValue = info[1];
+  budgetValue = 5000;
+  console.log("DEBUGGGGG  " + cityValue);
+  console.log("DEBUGGGGG  " + stateValue);
+  getLocationData(stateValue, cityValue, budgetValue);
+  
+})
+
+loadSearchData();
+
 
