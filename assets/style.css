@@ -1,6 +1,6 @@
 * {
-
     font-family: 'Roboto', sans-serif;
+
 }
 
 body {
@@ -28,14 +28,13 @@ body {
     list-style-type: none;
     font-size: 60%;
     animation: 1s ease-out 0s 1 slideInFromLeft;
-
 }
 
 .main-content{
     text-align: center;
     margin:0;
     min-width: 100vw;
-    min-height: 650px;
+    min-height: 670px;
     align-content: center;
     background-image:url(./images/rommies\ .jpeg);
     background-repeat:no-repeat;
@@ -44,6 +43,7 @@ body {
     image-rendering: crisp-edges;
 }
 
+/* CSS animation to make text appear from the left when webpage loads */
 @keyframes slideInFromLeft {
     0% {
       transform: translateX(-100%);
@@ -52,50 +52,47 @@ body {
       transform: translateX(0);
     }
   }
+
+  /* fading in CSS animation */
+  @keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   
+/* ***** styling main webpage *********** */
 .roomfinder-data {
-    min-width: 600px;
+    min-width: 800px;
 }
 
 .roomfinder-data form div {
-    padding: 3%;
+    padding: 2%;
 }
 
-.form-check {
-    margin-left: 5%;
+.submit-data:hover {
+    color: rgb(0, 180, 180);
+
 }
 
+/* ****** styling for form check validation ********** */
 #validationFormCheck2, #validationFormCheck3 {
     cursor: pointer;
     border-radius: 10px;
     min-width: 100px;
 }
 
-
-.form-check-input {
-    list-style-type: none;
-}
-
-.form-check-button {
-    border-radius: 5px;
-}
-
-.form-check-button:focus, .form-check-button:active {
-    background-color: rgb(37, 104, 37);
-}
-
-.inner-form{
-    margin: 0px;
-}
-
 #clearBtn{
     margin-top: 25px;
 }
 
+/* styling footer section of main webpage */
  footer {
      margin: 0 auto;
-     text-align: center;
  }
+
 footer ul li {
     font-size: 50%;
     list-style-type: none;
@@ -107,16 +104,34 @@ footer ul li a {
     color: white;
 }
 
+footer ul li a:hover {
+    color: rgb(0, 180, 180);
+}
+
+/******** styling about webpage ************/
+
+.about-section {
+    animation: 1s ease-out 0s 1 FadeIn;
+}
+
+.about-description {
+    line-height: 2.5;
+}
+
 /* styling contacts webpage */
+.contact-page {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
 .contact-name {
     font-size: 120%;
-  }
+}
 
-
-/* styling ternd and conditions webpage */
+/********* styling terms and conditions webpage ************/
 
 .terms-and-conditions {
     padding: 5%;
+    background-color: #00488A;
 }
 
 .terms-and-conditions-image {
@@ -124,15 +139,34 @@ footer ul li a {
 }
 
 .terms-and-conditions-header {
-    font-size: 250%;
+    font-size: 150%;
+    font-weight: 900;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .terms-and-conditions-info {
-    font-size: 90%;
+    font-size: 110%;
+    animation: 2s ease-out 0s 1 slideInFromLeft;
 }
 
-
 /* responsiveness */
+
+@media (max-width: 950px) {
+    .terms-and-conditions-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .terms-and-conditions-header {
+        font-size: 90%;
+        font-weight: 900;
+    }
+
+    .terms-and-conditions-image {
+        margin: 0% 1%;
+    }
+  }
+
 @media (max-width: 500px) {
     footer {
         padding-top: 5%;
