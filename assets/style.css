@@ -43,6 +43,8 @@ body {
     image-rendering: crisp-edges;
 }
 
+
+
 /* CSS animation to make text appear from the left when webpage loads */
 @keyframes slideInFromLeft {
     0% {
@@ -65,16 +67,32 @@ body {
   
 /* ***** styling main webpage *********** */
 .roomfinder-data {
-    min-width: 800px;
+    min-width: 375px;
 }
 
 .roomfinder-data form div {
     padding: 2%;
 }
 
+.list-item {
+    list-style-type: none;
+    border: 0.25px solid rgb(202, 199, 199);
+    border-radius: 4px;
+    margin-bottom: 5%;
+}
+
+.submit-data, #clearBtn {
+    font-size: 60%;
+}
+
 .submit-data:hover {
     color: rgb(0, 180, 180);
 
+}
+
+aside {
+    min-width: 70px;
+    margin-left: 5%;
 }
 
 /* ****** styling for form check validation ********** */
@@ -166,6 +184,17 @@ footer ul li a:hover {
         margin: 0% 1%;
     }
   }
+
+@media (max-width: 700px) {
+    .roomfinder-data {
+        display: flex;
+        justify-content: start;
+    }
+
+    .h4, #recent-search-list li {
+        font-size: 60%;
+    }
+}
 
 @media (max-width: 500px) {
     footer {
