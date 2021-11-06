@@ -83,6 +83,15 @@ body {
 .form-check-button:focus, .form-check-button:active {
     background-color: rgb(37, 104, 37);
 }
+
+.inner-form{
+    margin: 0px;
+}
+
+#clearBtn{
+    margin-top: 25px;
+}
+
  footer {
      margin: 0 auto;
      text-align: center;

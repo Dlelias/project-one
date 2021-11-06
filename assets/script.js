@@ -1,11 +1,13 @@
 //selectors--------------------------------------------------------------------------------
 
 var submitDataButton = document.querySelector(".needs-validation"); // button to submit form containing state, city and budget data
-
+var recentSearchList = document.querySelector("#recent-search-list");
+var clearBtn = document.querySelector("#clearBtn");
 // selection for state, city and bugdet
 var state = document.querySelector("#validationCustom01");
 var city = document.querySelector("#validationCustom02");
 var budget = document.querySelector("#validationCustom03");
+
 
 // var rentOrBuyOption = document.querySelector(".form-check-button"); // select if user selected either rent or buy option
 // / button to submit optional data
@@ -13,11 +15,35 @@ var submitOptionalDataButton = document.querySelector(".submit-optional-data");
 
 //globals
 
-// var roomsBaseApi = "https://cors-anywhere.herokuapp.com/https://www.roomster.com/api/search?"; //base url for roomster api in develop mode. uses a proxy -- make sure you authenticate to the server.
-var roomsBaseApi = "https://www.roomster.com/api/search?"; // base url to use when deploying to production -- you do not need a proxy server in prod**important
+var roomsBaseApi = "https://cors-anywhere.herokuapp.com/https://www.roomster.com/api/search?"; //base url for roomster api in develop mode. uses a proxy -- make sure you authenticate to the server.
+//var roomsBaseApi = "https://www.roomster.com/api/search?"; // base url to use when deploying to production -- you do not need a proxy server in prod**important
 var GoogleAPIKey = "AIzaSyCmEuQHyUcrKoHajuYANO4wsVkMzEJX1GA"; // Google Maps API key
 
 //functions--------------------------------------------------------------------------------
+
+
+
+//
+function loadSearchData(){
+  var roomData = JSON.parse(localStorage.getItem("roomStorage"));
+  console.log(roomData);
+  recentSearchList.innerHTML = '';
+  if(roomData)
+  {
+    for(var i = 0; i < roomData.length; i++)
+    {
+      var item = document.createElement("li");
+      item.setAttribute("class", "list-group-item")
+      item.innerHTML = `${roomData[i].cityInfo}, ${roomData[i].stateInfo}`
+      recentSearchList.append(item);
+      if(i == 4)
+      {
+        break;
+      }
+    }
+  }
+}
+
 
 // function that submits data
 function submitData(event) {
@@ -26,10 +52,12 @@ function submitData(event) {
     // functions that grab data from api and 
     if (state) {
         stateValue = state.value.trim();
+        console.log("line 55 ",stateValue);
     }
 
     if (city) {
         cityValue = city.value.trim();
+        console.log("line 55 ",cityValue);
     }
 
     if (budget) {
@@ -59,32 +87,33 @@ function storeRoomData(state, city, budget) {
     budgetInfo: budget,
   };
 
+    // variable to store every room data info into database
+    var allRoomData = JSON.parse(localStorage.getItem("roomStorage")) || [];
     allRoomData.push(roomData);
     localStorage.setItem("roomStorage", JSON.stringify(allRoomData));
     console.log(localStorage.getItem("roomStorage"))
-    location.href = `results.html?city=${cityValue}&state=${stateValue}&budget=${budgetValue}`
+    //location.href = `results.html?city=${cityValue}&state=${stateValue}&budget=${budgetValue}`
 
-  // location.href = "results.html";
+   location.href = "results.html";
 }
 
-// variable to store every room data info into database
-var allRoomData = JSON.parse(localStorage.getItem("roomStorage")) || [];
 
 
 // get the lattituude and longitude information using Google Maps API based off city and sate
 // take the ne and sw lat/long info and add to roomAPIURL
 // do fetch requiest on roomAPIURL;
 function getLocationData(state,city,budget) {
-    console.log("line 79")
+    console.log("line 104" ,state)
 
     var GoogleAPIURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "," + state + "&key=" + GoogleAPIKey;
+    console.log(GoogleAPIURL);
     fetch(GoogleAPIURL)
     .then(function (response) {
-        console.log("line 84")
+        console.log("line 110")
         if (response.ok) {
             response.json().then(function (data) {
                 
-                console.log("line 88",data)
+                console.log("line 114",data)
                 // pass the data containing lat/lon and coordinates to getRoomData to get the room info
                 getRoomData(data,budget);
             })
@@ -111,11 +140,12 @@ function getRoomData(data, budgetMax) {
     "&search_params.geo.lng_ne=" +
     data["results"][0]["geometry"]["bounds"]["northeast"].lng +
     "&search_params.include_total_count=true&search_params.is_cache_loaded=false";
-  console.log(roomAPIURL);
+  console.log("im getting room data from ",roomAPIURL);
   fetch(roomAPIURL)
     .then((res) => res.json())
     .then(function (data) {
       localStorage.setItem("cityData", JSON.stringify(data));
+      console.log("line 148 ",cityValue);
     storeRoomData(stateValue, cityValue, budgetValue);
     })
     .catch((err) => console.log(err));
@@ -150,4 +180,27 @@ submitDataButton.addEventListener("submit",(event) => {
     console.log("hey we got to line 185")
     submitData(event)
 });
+
+clearBtn.addEventListener("click", (event) => {
+  localStorage.removeItem("roomStorage");
+  loadSearchData();
+})
+
+recentSearchList.addEventListener("click",(event) => {
+  var info = event.target.innerHTML;
+  info = info.split(', ');
+  console.log(info);
+  console.log(typeof(info));
+
+  stateValue = info[0];
+  cityValue = info[1];
+  budgetValue = 5000;
+  console.log("DEBUGGGGG  " + cityValue);
+  console.log("DEBUGGGGG  " + stateValue);
+  getLocationData(stateValue, cityValue, budgetValue);
+  
+})
+
+loadSearchData();
+
 
