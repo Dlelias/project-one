@@ -1,11 +1,11 @@
 // this script is for javascript functionality on results.html webpage
 
 // get all the data we retrived from Roomster API
-var data = JSON.parse(localStorage.getItem("cityData"));
+const data = JSON.parse(localStorage.getItem("cityData"));
 
 // Builds results page, 1 card per property
 function showResults() {
-  for (var i = 0; i < data.items.length; i++) {
+  for (let i = 0; i < data.items.length; i++) {
     $(".card-container").append(`<div class="rounded col-12 col-xl-3 col-md-5 p-5">
     <div class="card h-100">
       <img src="${data.items[i].listing.images[0]}" class="min-w-100 card-img-top alt="..." />
@@ -25,7 +25,7 @@ function showResults() {
 
 // Event-listener(s) for "view photos" buttons
 $(".card-container").on("click", ".myButton", function (event) {
-  var selectedProperty = this.id;
+  let selectedProperty = this.id;
   viewPhotos(selectedProperty);
 });
 
@@ -33,7 +33,7 @@ $(".card-container").on("click", ".myButton", function (event) {
 function viewPhotos(selectedProperty) {
   $("#back-to-results").removeClass("invisible");
   $(".card-container").empty();
-  for (var i = 0; i < data.items[selectedProperty].listing.images.length; i++) {
+  for (let i = 0; i < data.items[selectedProperty].listing.images.length; i++) {
     $(".card-container").append(`<div class="col-12 col-xl-3 col-md-5 p-5">
     <div class="card" >
       <img src="${data.items[selectedProperty].listing.images[i]}" class="card-img-top alt="..." />    
